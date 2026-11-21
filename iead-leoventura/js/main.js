@@ -37,7 +37,7 @@ items.filter(i=>i[3]).forEach(([n,t,d,u])=>{
 document.querySelectorAll('[data-cfg]').forEach(e=>e.textContent=I[e.dataset.cfg]);
 ['logo-top','logo-hero'].forEach(id=>$(id).src=I.logo);
 $('hero-titulo').textContent=C.hero.titulo;$('hero-texto').textContent=C.hero.texto;$('hero-local').textContent=I.local;
-if(I.foto){const im=$('hero-img');im.src=I.foto;im.alt=I.fotoAlt;$('hero-photo').hidden=false}
+if(I.foto){const im=$('hero-img');im.onload=()=>{im.hidden=false;im.parentNode.classList.add('has-photo')};im.alt=I.fotoAlt;im.src=I.foto}
 C.cultos.forEach(c=>$('sched').append(el('li','<span class="d">'+c.dia+'</span><span class="t">'+c.nome+' · '+(c.horario||'<span class="pend">Horário a definir</span>')+'</span>')));
 $('prog-aviso').textContent=C.cultos.some(c=>!c.horario)?C.programacaoAviso:'';
 if(C.eventos.length){$('eventos-box').hidden=false;C.eventos.forEach(e=>$('eventos').append(el('li','<span class="d">'+e.nome+'</span><span class="t">'+e.data+(e.detalhe?' · '+e.detalhe:'')+'</span>')))}
