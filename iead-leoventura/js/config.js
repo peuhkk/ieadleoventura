@@ -11,7 +11,7 @@ window.SITE = {
     pastor: "Pr. Magno Alves Mota",
     cargoPastor: "Pastor presidente",
     logo: "assets/logo/logo.png",   // troque pelo arquivo real (SVG ou PNG)
-    foto: "",                        // ex.: "assets/images/igreja.jpg" (opcional)
+    foto: "assets/images/igreja.png",                        // ex.: "assets/images/igreja.jpg" (opcional)
     fotoAlt: "Fachada da IEAD Leoventura" // descreva a foto escolhida
   },
   hero: {
